@@ -1,0 +1,634 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A Text Annotation tool for Humans">
+      
+      
+        <link rel="canonical" href="https://doccano.github.io/doccano/advanced/aws_https_settings/">
+      
+      
+        <meta name="author" content="Hiroki Nakayama">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-4.6.3">
+    
+    
+      
+        <title>AWS HTTPS settings - doccano</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#00bcd4">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="cyan" data-md-color-accent="cyan">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#https-settings-for-doccano-in-aws" tabindex="0" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://doccano.github.io/doccano/" title="doccano" aria-label="doccano" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              doccano
+            </span>
+            <span class="md-header-nav__topic">
+              
+                AWS HTTPS settings
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/doccano/doccano/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    doccano/doccano
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://doccano.github.io/doccano/" title="doccano" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    doccano
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/doccano/doccano/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    doccano/doccano
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Doccano" class="md-nav__link">
+      Doccano
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/" title="Getting started" class="md-nav__link">
+      Getting started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorial/" title="Tutorial" class="md-nav__link">
+      Tutorial
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../project_structure/" title="Project Structure" class="md-nav__link">
+      Project Structure
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Advanced
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Advanced
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        AWS HTTPS settings
+      </label>
+    
+    <a href="./" title="AWS HTTPS settings" class="md-nav__link md-nav__link--active">
+      AWS HTTPS settings
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-hosted-zone-in-route-53" class="md-nav__link">
+    Create hosted zone in Route 53
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-certificate-in-acm" class="md-nav__link">
+    Create certificate in ACM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-ec2-instance" class="md-nav__link">
+    Create EC2 instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-elb" class="md-nav__link">
+    Create ELB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-record-in-route-53" class="md-nav__link">
+    Create A record in Route 53
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../oauth2_settings/" title="OAuth2 settings" class="md-nav__link">
+      OAuth2 settings
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../CODE_OF_CONDUCT/" title="Code of Conduct" class="md-nav__link">
+      Code of Conduct
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../roadmap/" title="Roadmap" class="md-nav__link">
+      Roadmap
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-hosted-zone-in-route-53" class="md-nav__link">
+    Create hosted zone in Route 53
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-certificate-in-acm" class="md-nav__link">
+    Create certificate in ACM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-ec2-instance" class="md-nav__link">
+    Create EC2 instance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-elb" class="md-nav__link">
+    Create ELB
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-record-in-route-53" class="md-nav__link">
+    Create A record in Route 53
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/doccano/doccano/edit/master/docs/advanced/aws_https_settings.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="https-settings-for-doccano-in-aws">HTTPS settings for doccano in AWS</h1>
+<ol>
+<li>Create hosted zone in Route 53 </li>
+<li>Create certificate in ACM</li>
+<li>Create EC2 instance</li>
+<li>Create ELB</li>
+<li>Create A record in Route 53</li>
+</ol>
+<h2 id="create-hosted-zone-in-route-53">Create hosted zone in Route 53</h2>
+<p>HTTPS need a domain name. If you don't have one, you can register it by the AWS Route 53 service, or you can get one from other domain seller.</p>
+<p>After you get a domain name, you can create Hosted Zone by Route 53.</p>
+<p>If you register domain from Route 53, you can find it in the <code>Hosted Zone</code>.</p>
+<p><img alt="2B0FF02C-42DA-41D1-BFA1-31018BE006ED" src="https://camo.githubusercontent.com/998dab1eca0e9673ab98d92b65b199cb4e2f96ea/68747470733a2f2f7773332e73696e61696d672e636e2f6c617267652f303036744b665463677931673132397a346c3733726a333131783065673078332e6a7067" /></p>
+<h2 id="create-certificate-in-acm">Create certificate in ACM</h2>
+<p><img alt="22F3520E-909A-4215-B73A-DBB452E3D4E2" src="https://camo.githubusercontent.com/e3e0a24d2265728072d9e65220a41d2ddd6b42bb/68747470733a2f2f7773322e73696e61696d672e636e2f6c617267652f303036744b6654636779316731326132653362306a6a3331666c3062683433312e6a7067" /></p>
+<p>You should replace the domain name by yours.</p>
+<p><img alt="image-20190314145326046" src="https://camo.githubusercontent.com/faf83a9ee1774d92a01de9f69e48ed002c7a827e/68747470733a2f2f7773312e73696e61696d672e636e2f6c617267652f303036744b66546367793167313261336a356d33756a333166393066613077342e6a7067" /></p>
+<p><img alt="image-20190314145344449" src="https://camo.githubusercontent.com/874362144a3547629383ad93e1f13831e35d0b82/68747470733a2f2f7773312e73696e61696d672e636e2f6c617267652f303036744b665463677931673132613375736232626a33306b6b3039626a73762e6a7067" /></p>
+<p><img alt="4FC120A2-6DB5-4F03-A209-12C22EDD6097" src="https://camo.githubusercontent.com/b75bc07e8d96b796872c697de951ab44d74d04d3/68747470733a2f2f7773342e73696e61696d672e636e2f6c617267652f303036744b665463677931673132613873643730786a3331667630686637646d2e6a7067" /></p>
+<p>Don't forget to Create record in Route 53 in step 4.</p>
+<p>After you request a certificate, wait for a while, You should see the status become 'Issued'.</p>
+<p><img alt="3AAE20BC-FC34-4738-AED0-D7D67929F6FF" src="https://camo.githubusercontent.com/82528820652678c19ee46ff5a0f07dbfaba31f5e/68747470733a2f2f7773322e73696e61696d672e636e2f6c617267652f303036744b66546367793167313261356a776270726a333136743066387139622e6a7067" /></p>
+<h2 id="create-ec2-instance">Create EC2 instance</h2>
+<p>In this part, you can just click the launch button to create a EC2 instance.</p>
+<p><a href="https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3-external-1.amazonaws.com/cf-templates-10vry9l3mp71r-us-east-1/20190732wl-new.templatexloywxxyimi&amp;stackName=doccano"><img alt="AWS CloudFormation Launch Stack SVG Button" src="https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg" /></a></p>
+<h2 id="create-elb">Create ELB</h2>
+<p><img alt="image-20190314150439785" src="https://camo.githubusercontent.com/158c2fb2957546ed8bb82694497b60b9c7f38aa5/68747470733a2f2f7773332e73696e61696d672e636e2f6c617267652f303036744b6654636779316731326166376a676a746a3330663230337a3734742e6a7067" /></p>
+<p>Click the <code>Create Load Balancer</code> button and select <code>Application Load Balancer</code>.</p>
+<p>Fill the name, change protocol to HTTPS, and do not forget add at least two availability zones. Make sure the zone that EC2 instance created is included.</p>
+<p><img alt="02BE83A7-4C43-48BE-BCF0-95D2DF7C603D" src="https://camo.githubusercontent.com/c4cc530aea78e66ea99eab905804cae66ab20a04/68747470733a2f2f7773342e73696e61696d672e636e2f6c617267652f303036744b665463677931673132616861756566736a3330796e306d6e6774732e6a7067" /></p>
+<p>Select the certificate we created early.</p>
+<p><img alt="image-20190314151004337" src="https://camo.githubusercontent.com/455140fc7b7a22a18e96e5f2aa31d9fd0e7c7722/68747470733a2f2f7773312e73696e61696d672e636e2f6c617267652f303036744b665463677931673132616b75693576366a333071763063303431382e6a7067" /></p>
+<p>You can select the same security groups created when you create the EC2 instance.</p>
+<p><img alt="image-20190314151110756" src="https://camo.githubusercontent.com/5d029d4fa494420ed077be6b57ab60935d378e7f/68747470733a2f2f7773322e73696e61696d672e636e2f6c617267652f303036744b665463677931673132616c7a796735756a33313272306139676f392e6a7067" /></p>
+<p>Or you can create a new one</p>
+<p><img alt="image-20190314151253917" src="https://camo.githubusercontent.com/e620c6738ff95f3311edf708b80a949f8b79f565/68747470733a2f2f7773312e73696e61696d672e636e2f6c617267652f303036744b665463677931673132616e736d3931706a333163313062646469652e6a7067" /></p>
+<p>Fill the target group name and leave others defualt.</p>
+<p><img alt="image-20190314151314109" src="https://camo.githubusercontent.com/f22b99c57ca9b8114683f1501942dcc3cc0874f1/68747470733a2f2f7773322e73696e61696d672e636e2f6c617267652f303036744b665463677931673132616f34797661746a3330716630666a74616d2e6a7067" /></p>
+<p>Add the instance to registered.</p>
+<p><img alt="image-20190314151358736" src="https://camo.githubusercontent.com/515649dce66466e9cefa730fc1a35a398ecb260d/68747470733a2f2f7773322e73696e61696d672e636e2f6c617267652f303036744b665463677931673132616f777667736f6a333136793066346164672e6a7067" /></p>
+<p>Then review and create.</p>
+<h2 id="create-a-record-in-route-53">Create A record in Route 53</h2>
+<p>Back to route 53, and click <code>Create Record Set</code>. Fill the subname and the ELB name in the <code>Alias Target</code>.</p>
+<p><img alt="image-20190314151601030" src="https://camo.githubusercontent.com/82944e13e1ef3f4015484417a50635c9352dae33/68747470733a2f2f7773312e73696e61696d672e636e2f6c617267652f303036744b665463677931673132617231383931666a33306278306e6d6a746d2e6a7067" /></p>
+<p>Finally, you can access the doccano by HTTPS.</p>
+<p><img alt="image-20190314151841872" src="https://camo.githubusercontent.com/85dfef30b4b01df5e0d8e339b38e5a31592dd103/68747470733a2f2f7773332e73696e61696d672e636e2f6c617267652f303036744b6654636779316731326174746563636b6a3330716730396d6a73612e6a7067" /></p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../project_structure/" title="Project Structure" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Project Structure
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../oauth2_settings/" title="OAuth2 settings" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                OAuth2 settings
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 - 2019 Hiroki Nakayama
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/Hironsan" target="_blank" rel="noopener" title="github" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/Hironsan13" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
+      
+      <script>app.initialize({version:"1.1",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
