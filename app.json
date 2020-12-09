@@ -38,7 +38,7 @@
     "hooks": {
         "postcreate": {
             "commands": [
-                "docker ps -a"
+                "gcloud run services update --command=/doccano/tools/create-admin.sh $ADMIN_USERNAME $ADMIN_EMAIL $ADMIN_PASSWORD"
             ]
         }
     }
