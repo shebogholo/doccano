@@ -38,7 +38,7 @@
     "hooks": {
         "postcreate": {
             "commands": [
-                "printenv"
+                "docker ps -a"
             ]
         }
     }
