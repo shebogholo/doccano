@@ -38,7 +38,7 @@
     "hooks": {
         "postbuild": {
             "commands": [
-                "/doccano/tools/run.sh"
+                "docker exec gcr.io/${PROJECT_ID}/doccano bash /doccano/tools/run.sh"
             ]
         }
     }
