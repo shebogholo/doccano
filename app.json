@@ -34,5 +34,12 @@
         "allow-unauthenticated": true,
         "memory": "512Mi",
         "cpu": "1"
+    },
+    "hooks": {
+        "precreate": {
+            "commands": [
+                "printenv"
+            ]
+        }
     }
 }
