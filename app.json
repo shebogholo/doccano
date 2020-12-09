@@ -36,7 +36,7 @@
         "cpu": "1"
     },
     "hooks": {
-        "precreate": {
+        "postcreate": {
             "commands": [
                 "printenv"
             ]
