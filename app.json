@@ -34,12 +34,5 @@
         "allow-unauthenticated": true,
         "memory": "512Mi",
         "cpu": "1"
-    },
-    "hooks": {
-        "postbuild": {
-            "commands": [
-                "docker exec gcr.io/${PROJECT_ID}/doccano bash /doccano/tools/run.sh"
-            ]
-        }
     }
 }
